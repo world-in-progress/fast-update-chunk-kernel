@@ -2,7 +2,6 @@
 A multiprocessing python framework for updating and merging images.
 
 ## Our Philosophy
-
 If you are greedy, make things as FAST as you can.
 
 If you are lazy, delay UPDATES as long as you can.
@@ -43,7 +42,6 @@ python main.py \
 ```
 
 ## How to check progress rate
-
 ```python
 from fast_update_chunk_kernel import check_progress
 

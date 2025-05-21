@@ -1,5 +1,4 @@
 import math
-import numpy as np
 from pydantic import BaseModel
 
 class Tile(BaseModel):
@@ -39,7 +38,6 @@ class Scene(BaseModel):
 
 EARTH_CIRCUMFERENCE_EQUATOR = 40075.0
 EARTH_CIRCUMFERENCE_MERIDIAN = 40008.0
-INFINITY = 999999
 
 class GridHelper:
     def __init__(self, grid_resolution_in_kilometer: float = 1):
