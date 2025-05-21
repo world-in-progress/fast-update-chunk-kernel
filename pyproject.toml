@@ -1,0 +1,12 @@
+[project]
+name = "fast-update-chunk-kernel"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "rasterio>=1.4.3",
+    "requests>=2.32.3",
+    "rio-tiler>=7.7.2",
+    "shapely>=2.1.1",
+]
