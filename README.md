@@ -3,13 +3,13 @@ A multiprocessing python framework for updating and merging images.
 
 ## Our Philosophy
 
-If you are greedy, make things as **FAST** as you can.
+If you are greedy, make things as FAST as you can.
 
-If you are lazy, delay **UPDATES** as long as you can.
+If you are lazy, delay UPDATES as long as you can.
 
-If you are poor, subdivide **CHUNKS** as much as you can.
+If you are poor, subdivide CHUNKS as much as you can.
 
-If you are narrow, do not expose your **KERNEL** to the world.
+If you are narrow, do not expose your KERNEL to the world.
 
 ## Dependencies
 - Python >= 3.12
@@ -18,8 +18,13 @@ If you are narrow, do not expose your **KERNEL** to the world.
 - rio-tiler >= 7.7.2
 - shapely >= 2.1.1
 
+## Installation without uv
+```bash
+pip install -r requirements.txt
+```
+
 ## How to use
-Use `uv`:
+With `uv`:
 ```bash
 uv run main.py 
     --minio-endpoint <MINIO_ENDPOINT> \
@@ -28,7 +33,7 @@ uv run main.py
     --work-units <WORK_UNITS>
 ```
 
-Use `python`:
+With `python`:
 ```bash
 python main.py \
     --minio-endpoint <MINIO_ENDPOINT> \
