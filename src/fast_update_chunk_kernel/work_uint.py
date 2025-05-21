@@ -6,8 +6,6 @@ from rasterio.transform import from_bounds
 from .schemas import Tile, Scene, GridHelper
 
 INFINITY = 999999
-BASE_SCENE: Scene | None = None
-BASE_SCENE_CLOUD: int = INFINITY
 CLOUD_BAND_CONTEXT_MAP: dict[str, COGReader] = {}
 
 def process(minio_endpoint: str, grid: Tile, scenes: list[Scene], grid_helper: GridHelper, output_dir: str):
@@ -68,11 +66,11 @@ def process(minio_endpoint: str, grid: Tile, scenes: list[Scene], grid_helper: G
 
         sensorName = scene.sensorName
         if 'Landsat' in sensorName:
-            cloud_mask = (image_data & (1 << 3)) > 0  # Pick the 3rd bit
+            cloud_mask = (image_data & (1 << 3)) > 0  # pick the 3rd bit
         if 'Landset' in sensorName:
-            cloud_mask = (image_data & (1 << 3)) > 0  # Pick the 3rd bit
+            cloud_mask = (image_data & (1 << 3)) > 0  # pick the 3rd bit
         elif 'MODIS' in sensorName:
-            cloud_mask = (image_data & 1) > 0  # Pick the 0th bit
+            cloud_mask = (image_data & 1) > 0  # pick the 0th bit
         elif "GF" in sensorName:
             cloud_mask = (image_data == 2)
         else:

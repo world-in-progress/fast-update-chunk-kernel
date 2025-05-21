@@ -12,9 +12,9 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 class Merger:
-    def __init__(self, minio_endpoint: str, workspace_dir: str, description_path: str, workUnits: int):
+    def __init__(self, minio_endpoint: str, workspace_dir: str, description_path: str, mp_um: int):
         self.minio_endpoint = minio_endpoint
-        self.workUnits = workUnits
+        self.mp_um = mp_um
         with open(description_path, 'r') as f:
             self.meta = json.load(f)
         
@@ -37,7 +37,7 @@ class Merger:
             f.write(f'{len(self.grids)}\n')
             
         # Initialize multiprocessing pool
-        self.pool = mp.Pool(processes=self.workUnits)
+        self.pool = mp.Pool(processes=self.mp_um)
 
     def run(self):
         # Use multiprocessing to process each grid

@@ -26,20 +26,20 @@ pip install -r requirements.txt
 ## How to use
 With `uv`:
 ```bash
-uv run main.py 
-    --minio-endpoint <MINIO_ENDPOINT> \
-    --workspace-dir <WORKSPACE_DIR> \
-    --description-path <DESCRIPTION_PATH> \
-    --work-units <WORK_UNITS>
+uv run main.py \
+    --minio-endpoint <MINIO_ENDPOINT: eg. http://localhost:81192> \
+    --workspace-dir <WORKSPACE_DIR: /path/to/workspace> \
+    --description-path <DESCRIPTION_PATH: /path/to/request/description.json> \
+    --mp-num <MULTIPROCESSING_NUM: default is 4> \
 ```
 
 With `python`:
 ```bash
 python main.py \
-    --minio-endpoint <MINIO_ENDPOINT> \
-    --workspace-dir <WORKSPACE_DIR> \
-    --description-path <DESCRIPTION_PATH> \
-    --work-units <WORK_UNITS>
+    --minio-endpoint <MINIO_ENDPOINT: eg. http://localhost:81192> \
+    --workspace-dir <WORKSPACE_DIR: /path/to/workspace> \
+    --description-path <DESCRIPTION_PATH: /path/to/request/description.json> \
+    --mp-num <MULTIPROCESSING_NUM: default is 4> \
 ```
 
 ## How to check progress rate
